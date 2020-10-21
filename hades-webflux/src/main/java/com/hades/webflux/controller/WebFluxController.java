@@ -10,7 +10,7 @@ import java.time.Duration;
 @RestController
 public class WebFluxController {
 
-    @GetMapping("/flux_result")
+    @GetMapping("/flux")
     public Mono<String> getResult(ServerHttpRequest request) {
         return Mono.defer(() -> Mono.just("Result is ready!"))
                 .delaySubscription(Duration.ofMillis(500));
